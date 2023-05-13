@@ -8,15 +8,45 @@
     <title>Redirect</title>
 </head>
 <body>
+    <style>
+        /*Some css to make it look nice, dark theme, centered stuff, divs etc,*/
+        body {
+            background-color: black;
+            color: white;
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        p {
+            text-align: center;
+        }
+
+    </style>
     <script>
         //Get the redirect parameter from the URL
         var urlParams = new URLSearchParams(window.location.search);
         var redirect = urlParams.get('redirect');
         //Add https to redirect variable
-        redirect = "https://" + redirect;
-        window.open(redirect, "_self");
+        // If redirect already has https, do nothing
+        if (redirect.substring(0, 8) == "https://") {
+            // Do nothing
+        }
+        // If https is not there, add it
+        if (redirect.substring(0, 8) != "https://") {
+            redirect = "https://" + redirect;
+        }
+        // If URL is null, inform the user, otherwise, do the redirect
+        if (redirect == null) {
+            document.write("No URL was specified. Please contact the link owner. thissite.cf or thissite.com/?redirect=yoururl.com Please contact the administrator to repair these issues in the URL.");
+        }
+        else {
+            window.location.href = redirect;
+        }
+
+        
+
+        // Else, if https is not there, add it and do the redirect
     </script>
     <p>Redirecting...</p>
-    <p>Powered by iCorp International Services.</p>
+    <p>Powered by iCorp Global DataCenter Services.</p>
 </body>
 </html>
