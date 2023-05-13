@@ -21,7 +21,13 @@
         }
 
     </style>
+    
     <script>
+        // Wait 2 seconds
+        setTimeout(function() {
+            // Redirect
+            redirect();
+        }, 2000);
         //Get the redirect parameter from the URL
         var urlParams = new URLSearchParams(window.location.search);
         var redirect = urlParams.get('redirect');
@@ -41,12 +47,12 @@
         else {
             window.location.href = redirect;
         }
-
-        
-
-        // Else, if https is not there, add it and do the redirect
+        // Set the href of the a tag with id "oof" to the redirect variable
     </script>
+    <!--If you are not redirected within 3 seconds, click here message, the url should be the redirect variable in the javascript-->
+    <p>If you are not redirected within 3 seconds, click <a id="oof" href="https://forms.microsoft.com/r/NRkE3G0yVs">here</a>.</p>
     <p>Redirecting...</p>
     <p>Powered by iCorp Global DataCenter Services.</p>
+    
 </body>
 </html>
