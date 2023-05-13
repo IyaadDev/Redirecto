@@ -31,6 +31,8 @@
         //Get the redirect parameter from the URL
         var urlParams = new URLSearchParams(window.location.search);
         var redirect = urlParams.get('redirect');
+        // base64 decode the redirect variable
+        redirect = atob(redirect);
         //Add https to redirect variable
         // If redirect already has https, do nothing
         if (redirect.substring(0, 8) == "https://") {
