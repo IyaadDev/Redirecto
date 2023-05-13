@@ -1,0 +1,22 @@
+<!--A simple html page that gets the "redirect" parameter of the URL and redirects-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirect</title>
+</head>
+<body>
+    <script>
+        //Get the redirect parameter from the URL
+        var urlParams = new URLSearchParams(window.location.search);
+        var redirect = urlParams.get('redirect');
+        //Add https to redirect variable
+        redirect = "https://" + redirect;
+        window.open(redirect, "_self");
+    </script>
+    <p>Redirecting...</p>
+    <p>Powered by iCorp International Services.</p>
+</body>
+</html>
